@@ -15,6 +15,10 @@ class Pizza(models.Model):
     def __str__(self):
         return self.name
 
-class FacebookUser:
+
+class FacebookUser(models.Model):
     name = models.CharField(max_length=30)
     friends = models.ManyToManyField('self')
+
+    def __str__(self):
+        return self.name
