@@ -1,13 +1,13 @@
 from django.db import models
 
 __all__ = (
-    'Person',
+    'RelatedUser',
     'TextPost',
     'PhotoPost',
 )
 
 
-class Person(models.Model):
+class RelatedUser(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -16,11 +16,12 @@ class Person(models.Model):
 
 class PostBase(models.Model):
     author = models.ForeignKey(
-        Person,
+        RelatedUser,
         on_delete=models.CASCADE,
         # 유저(Person) 입장에서
         # 자신이 특정 Post인 'author'인 경우에 해당하는 모든 PostBase객체를 참조하는 역방향 매니저 이름
-        related_name='posts',
+        related_name='%(class)s_set',
+        related_query_name='%(class)s',
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -32,6 +33,8 @@ class PostBase(models.Model):
 
 
 class TextPost(PostBase):
+    # related_name
+    # textpost_set
     text = models.TextField(blank=True)
 
 
