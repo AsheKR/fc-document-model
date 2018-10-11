@@ -7,6 +7,11 @@ from django.db import models
 # 3. Proxy 모델
 # 부모 테이블만 존재
 
+__all__ = (
+    'CommonInfo',
+    'Student',
+)
+
 
 class CommonInfo(models.Model):
     # DB에 넣을 때 자동으로 정렬
