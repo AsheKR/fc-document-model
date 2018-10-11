@@ -111,6 +111,7 @@ class TwitterUser(models.Model):
         :return: tuple(Relation instance, created(생성여부 True/False))
         """
 
+
 class Relation(models.Model):
     CHOICES_RELATION_TYPE = (
         ('f', 'Follow'),
