@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'inheritance.abstract_base_classes',
     'inheritance.abc_other',
     'inheritance.multi_table',
+    'inheritance.proxy',
 
     'relation.foreignkey',
     'relation.many_to_many',
