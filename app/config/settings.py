@@ -30,12 +30,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'fields',
-    'foreignkey',
-    'many_to_many',
-    'one_to_one',
-    'abstract_base_classes',
+    
+    'inheritance.abstract_base_classes',
+    'inheritance.abc_other',
+
+    'relation.foreignkey',
+    'relation.many_to_many',
+    'relation.one_to_one',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,7 +50,6 @@ INSTALLED_APPS = [
 
     'django_extensions',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
