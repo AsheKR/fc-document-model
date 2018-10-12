@@ -28,11 +28,12 @@ class Restaurant1(Place1):
     # <부모클래스의 소문자화>_ptr = models.OneToOneField(<부모클래스>)
     # place1_ptr = modelss.OneToOneField(Place1)
     # -> 임의의 필드에 parent_link=True 옵션을 주면 <부모클래스의 소문자화>_ptr 필드가 생성되지 않음
-    # place_ptr = models.OneToOneField(
-    #     Place1,
-    #     parent_link=True,
-    #     primary_key=True
-    # )
+    place_ptr = models.OneToOneField(
+        Place1,
+        parent_link=True,
+        primary_key=True,
+        on_delete=models.CASCADE
+    )
     serves_hot_dogs = models.BooleanField(default=False)
     serves_pizza = models.BooleanField(default=False)
 
