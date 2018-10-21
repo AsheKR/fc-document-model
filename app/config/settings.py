@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'fields',
+    'weblog',
 
     'inheritance.abstract_base_classes',
     'inheritance.abc_other',
